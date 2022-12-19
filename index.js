@@ -30,4 +30,15 @@ app.post("/apod/newApod", async (req, res) =>
         res.json(newApod);});
     });
 
+app.put("/apod/:id", async (req, res) =>
+    { Apod.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {new: true}
+        ).then(updatedApod => {
+            res.json(updatedApod);
+        });
+    })
+
+
 
