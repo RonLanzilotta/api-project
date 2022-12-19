@@ -15,4 +15,9 @@ let apodData = data.map(item => {
 
 Apod
     .deleteMany({})
-    .then(() => Apod.create())
+    .then(() => Apod.create(apodData))
+    .then(() => console.log('done! apod data created!'))
+    .then(() => mongoose.disconnect())
+    .catch(error => console.error('ERROR!', error))
+
+    console.log

@@ -1,17 +1,19 @@
 import mongoose from 'mongoose';
 
 mongoose.set("returnOriginal", false);
+mongoose.set('strictQuery', true);
 
-mongoose.connect("mongodb://127.0.0.1:27017/apod").catch((err) => {
+let connectionConfig = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}
+
+mongoose.connect("mongodb://127.0.0.1:27017/apod", connectionConfig).catch((err) => {
     console.log(`Error connection to MongoDB: ${err.message}`)
 });
 
-mongoose.connection.on("disconnected", () => {
-    console.log(chalk.bold("Disconnected from MongoDB!"));
-});
-
-mongoose.connection.on("error",(err) => {
-    console.log(chalk.red(`MongoDB connection error: ${err}`));
-});
+mongoose.connection.on('connected', () => console.log("Connected to database"))
+mongoose.connection.on('disconnected', () => console.log("Disconnected from database"))
+mongoose.connection.on('error', error=> console.error("Database error", error))
 
 export default mongoose.connection;
