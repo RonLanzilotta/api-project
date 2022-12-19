@@ -23,3 +23,11 @@ app.get("/apod/:date", async (req, res) => {
     const apodByDate = await Apod.find({ date: req.params.date });
     res.json(apodByDate);
 })
+
+app.post("/apod/newApod", async (req, res) =>  
+    {  // retrieve new data for body from nasa API. manually put in new date to focus on.
+        Apod.create(req.body).then(newApod => {
+        res.json(newApod);});
+    });
+
+
