@@ -40,5 +40,10 @@ app.put("/apod/:id", async (req, res) =>
         });
     })
 
+app.delete("/apod/:date", async (req, res) =>
+    { Apod.findOneAndDelete(req.params.date).then(deletedApod => {
+        res.json(deletedApod)})
+})
+
 
 
