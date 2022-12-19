@@ -7,3 +7,5 @@ fetch("https://api.nasa.gov/planetary/apod?api_key=3GFduAWIBO2cOv1bJy6q120OWxQM7
     .then(data => { fsPromises.writeFile("./apod.json", JSON.stringify(data))})
     .then(console.log('json created'))
     .catch(error => console.error(error))
+
+// Gets the data from NASA's public API and stores it in a JSON file in this project

@@ -9,4 +9,6 @@ const apodSchema = new Schema({
     "url": String
 })
 
+// A simple mongoose model that removes extraneous data from the publicly available NASA data
+
 export default mongoose.model('apod', apodSchema)

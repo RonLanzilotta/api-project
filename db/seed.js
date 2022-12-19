@@ -3,6 +3,8 @@ import connection from './connection.js';
 import data from "../apod.json" assert { type: 'json' }
 import Apod from '../models/Apod.js';
 
+// Organizes data from the raw JSON file into something that our mongoose schema will recognize.
+
 let apodData = data.map(item => {
     const apod = {}
 
@@ -12,6 +14,8 @@ let apodData = data.map(item => {
     apod.title = item.title
     return apod
 })
+
+// Seeds our db with the newly formatted data.
 
 Apod
     .deleteMany({})

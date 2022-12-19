@@ -8,6 +8,8 @@ let connectionConfig = {
     useUnifiedTopology: true
 }
 
+// Connnects locally to mongoDB
+
 mongoose.connect("mongodb://127.0.0.1:27017/apod", connectionConfig).catch((err) => {
     console.log(`Error connection to MongoDB: ${err.message}`)
 });
