@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import connection from '../db/connection.js';
-import data from "../seed/apod.json"
+import data from "../apod.json" assert { type: 'json' }
 import Apod from '../models/Apod.js';
 
 let apodData = data.map(item => {
@@ -19,5 +19,3 @@ Apod
     .then(() => console.log('done! apod data created!'))
     .then(() => mongoose.disconnect())
     .catch(error => console.error('ERROR!', error))
-
-    console.log
