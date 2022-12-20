@@ -42,7 +42,7 @@ const app = express();  // Establishes an instance of express
         });
 
     app.delete("/apod/:date", async (req, res) => { 
-        Apod.findOneAndDelete(req.params.date)
+        Apod.findOneAndDelete({date: req.params.date})
         .then(deletedApod => { // *DELETE* Search for and remove a specific entry from db by date.
             res.json(deletedApod)
         });
