@@ -61,8 +61,15 @@ To set up the app locally:
 
 - [APOD Repository](https://github.com/nasa/apod-api)
 
-## Improvements
+## Future Improvements
 
 This project could be expanded to include the entire NASA archive of daily astronomy images simply by altering the fetch URL to include the full date range. For demonstration purposes, I wanted to keep the seed data lean.
 
 A keyword search function would also make this database far more useful to compare images and information from similar cosmic objects.
+
+
+
+
+
+
+![/](./imgs/Saturn_At_Night.jpg)
