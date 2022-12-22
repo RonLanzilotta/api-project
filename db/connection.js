@@ -10,7 +10,9 @@ let connectionConfig = {
 
 // Connnects locally to mongoDB
 
-mongoose.connect("mongodb://127.0.0.1:27017/apod", connectionConfig).catch((err) => {
+const url = process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/apod'
+
+mongoose.connect(url, connectionConfig).catch((err) => {
     console.log(`Error connection to MongoDB: ${err.message}`)
 });
 

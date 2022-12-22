@@ -3,9 +3,9 @@ import connection from './db/connection.js';
 import Apod from './models/Apod.js';
 
 const app = express();  // Establishes an instance of express
+const PORT = process.env.PORT || 3000
 
-
-    app.listen(3000, () => {
+    app.listen(PORT, () => {
         console.log('Listening on 3000') // Assigns this project to port 3000
     });
     app.use(express.json());
