@@ -1,9 +1,12 @@
 import express from "express";
 import connection from "./db/connection.js";
 import Apod from "./models/Apod.js";
+import cors from "cors"
 
 const app = express(); // Establishes an instance of express
 const PORT = process.env.PORT || 3000;
+
+app.use(cors)
 
 app.listen(PORT, () => {
   console.log("Listening on 3000"); // Assigns this project to port 3000
@@ -17,6 +20,7 @@ app.get("/", (req, res) => {
     res.redirect("http://localhost:3000/apod"); // Redirects our root URI path to /apod
   }
 });
+
 
 app.get("/apod", async (req, res) => {
   const apod = await Apod.find({}); // *READ* response prints all items in the database.
