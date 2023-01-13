@@ -6,7 +6,7 @@ import cors from "cors"
 const app = express(); // Establishes an instance of express
 const PORT = process.env.PORT || 3000;
 
-app.use(cors)
+app.use(cors())
 
 app.listen(PORT, () => {
   console.log("Listening on 3000"); // Assigns this project to port 3000
